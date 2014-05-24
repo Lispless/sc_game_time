@@ -2,12 +2,24 @@
 <html>
 <head>
 	<title>
-		Leaderboard
+		Leaderboard page
 	</title>
 </head>
 <body>
 	<h1>
-		Hello world!
+		Leaderboard
 	</h1>
+		<div>
+		<ol>
+			<% @team_and_scores.each do |teams| %>
+			<li>
+			<%= teams[:home_team] %>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+	<div>
+		<a href= '/' >Back to home</a>
+	</div>
 </body>
 </html>

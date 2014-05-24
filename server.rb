@@ -1,5 +1,7 @@
 require 'sinatra'
+require 'pry'
 
+def team_and_scores
 team_and_scores = [
   {
     home_team: "Patriots",
@@ -26,6 +28,15 @@ team_and_scores = [
     away_score: 21
   }
 ]
+end
+
+def find_team_for_bio(home_team)
+	team_bio = nil
+	team_and_scores.each do |team_to_find|
+		team_bio = team_to_find if team_to_find[:home_team] == home_team
+		end
+		team_bio
+end
 
 get '/' do
 	@team_and_scores = team_and_scores
@@ -33,5 +44,11 @@ get '/' do
 end
 
 get '/leaderboard' do
+	@team_and_scores = team_and_scores
 	erb :leaderboard
+end
+
+get '/:home_team' do
+	@team_bio = find_team_for_bio(params[:home_team])
+	erb :team
 end
