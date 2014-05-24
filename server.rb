@@ -30,6 +30,15 @@ team_and_scores = [
 ]
 end
 
+# def list_of_teams
+# 	list = []
+# 	team_and_scores.each do |team_to_list|
+# 		list << team_to_list[:home_team] if team_to_list[:home_team].uniq
+# 		binding.pry
+# 	end
+# 	list
+# end
+
 def find_team_for_bio(home_team)
 	team_bio = nil
 	team_and_scores.each do |team_to_find|
@@ -40,6 +49,7 @@ end
 
 get '/' do
 	@team_and_scores = team_and_scores
+	# @list_of_teams = list_of_teams
 	erb :index
 end
 

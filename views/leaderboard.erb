@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<link rel="stylesheet" href="/style.css">
 	<title>
 		Leaderboard page
 	</title>
@@ -10,16 +11,16 @@
 		Leaderboard
 	</h1>
 		<div>
-		<ol>
-			<% @team_and_scores.each do |teams| %>
-			<li>
-			<%= teams[:home_team] %>
-			</li>
-			<% end %>
-		</ol>
-	</div>
+			<ol>
+				<% @team_and_scores.each do |teams| %>
+				<li>
+					The <%= teams[:home_team] %>
+				</li>
+				<% end %>
+			</ol>
+		</div>
 	<div>
-		<a href= '/' >Back to home</a>
+		<a href= '/' >Back to homepage</a>
 	</div>
 </body>
 </html>
