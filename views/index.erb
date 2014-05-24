@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Game Time
+	</title>
+</head>
+<body>
+	<h1>
+		Welcome to leaderboards
+	</h1>
+	<div>
+		<ol>
+			<% @team_and_scores.each do |teams| %>
+			<li>
+			<%= teams[:home_team] %>
+			</li>
+			<% end %>
+		</ol>
+	</div>
+</body>
+</html>
