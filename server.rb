@@ -65,8 +65,8 @@ end
 
 def find_team_for_bio(home_team)
 	team_bio = nil
-	team_and_scores.each do |team_to_find|
-		team_bio = team_to_find if team_to_find[:home_team] == home_team
+	list_of_teams.each do |team_to_find|
+		team_bio = team_to_find if team_to_find == home_team
 		end
 		team_bio
 end
@@ -81,6 +81,7 @@ get '/leaderboard' do
   @wins = wins
   @losses = losses
 	@team_and_scores = team_and_scores
+  @list_of_teams = list_of_teams
 	erb :leaderboard
 end
 

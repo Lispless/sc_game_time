@@ -20,7 +20,7 @@
 		<h4>
 			Or jump to your favorite team:
 		</h4>
-		<ol>
+		<ul>
 			<% @list_of_teams.each do |teams| %>
 				<li>
 					<a href=" <%= "#{teams}" %> ">
@@ -28,7 +28,7 @@
 					</a>
 				</li>
 			<% end %>
-		</ol>
+		</ul>
 	</div>
 	<div>
 		<a href= '/' >Back to home</a>
