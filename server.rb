@@ -87,5 +87,9 @@ end
 
 get '/:home_team' do
 	@team_bio = find_team_for_bio(params[:home_team])
+  @wins = wins
+  @losses = losses
+  @team_and_scores = team_and_scores
+  @list_of_teams = list_of_teams
 	erb :team
 end

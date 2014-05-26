@@ -15,23 +15,26 @@
 				<% @list_of_teams.each do |teams| %>
 				<li>
 					<% array_for_each_teams_wins = [] %>
+					<% array_for_each_teams_losses = [] %>
 					The <%= teams %> have won <% @wins.each do |weeding| %>
 						<% if weeding == teams %>
 							<% array_for_each_teams_wins << weeding %>
 						<% end %>
 						<% end %>
 						<%= array_for_each_teams_wins.count %>
-						times.
+						times and currently have <% @losses.each do |weeding| %>
+						<% if weeding == teams %>
+							<% array_for_each_teams_losses << weeding %>
+							<% end %>
+							<% end %>
+							<%= array_for_each_teams_losses.count %>
+							losses.
 				</li>
 				<% end %>
 			</ol>
 		</div>
 	<div>
 		<a href= '/' >Back to homepage</a>
-	</div>
-	<div>
-		<%= @wins %>
-		<%= @losses %>
 	</div>
 </body>
 </html>

@@ -8,10 +8,27 @@
 </head>
 <body>
 	<h1>
-		<%= @team_bio %>
+		The <%= @team_bio %> game page
 	</h1>
-</body>
 	<div>
-		<a href= '/' >Back to home</a>
+		<% array_for_each_teams_wins = [] %>
+		<% array_for_each_teams_losses = [] %>
+			The <%= @team_bio %> have won <% @wins.each do |weeding| %>
+				<% if weeding == @team_bio %>
+					<% array_for_each_teams_wins << weeding %>
+				<% end %>
+			<% end %>
+			<%= array_for_each_teams_wins.count %>
+			times and currently have <% @losses.each do |weeding| %>
+				<% if weeding == @team_bio %>
+					<% array_for_each_teams_losses << weeding %>
+				<% end %>
+			<% end %>
+			<%= array_for_each_teams_losses.count %>
+			losses.
 	</div>
+	<div>
+	<a href= '/' >Back to home</a>
+	</div>
+</body>
 </html>
