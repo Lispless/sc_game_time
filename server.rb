@@ -30,14 +30,14 @@ team_and_scores = [
 ]
 end
 
-# def list_of_teams
-# 	list = []
-# 	team_and_scores.each do |team_to_list|
-# 		list << team_to_list[:home_team] if team_to_list[:home_team].uniq
-# 		binding.pry
-# 	end
-# 	list
-# end
+def list_of_teams
+	list = []
+	team_and_scores.each do |team_to_list|
+		list << team_to_list[:home_team]
+    list << team_to_list[:away_team]
+	end
+	list.uniq
+end
 
 def wins
   win_array = []
@@ -73,7 +73,7 @@ end
 
 get '/' do
 	@team_and_scores = team_and_scores
-	# @list_of_teams = list_of_teams
+	@list_of_teams = list_of_teams
 	erb :index
 end
 
