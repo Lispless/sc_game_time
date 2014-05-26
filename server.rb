@@ -39,6 +39,18 @@ end
 # 	list
 # end
 
+def wins
+  win_array = []
+  team_and_scores.each do |win_or_lose|
+    if win_or_lose[:home_score] > win_or_lose[:away_score]
+      win_array << win_or_lose[:home_team]
+    else
+      win_array << win_or_lose[:away_team]
+    end
+  end
+  win_array
+end
+
 def find_team_for_bio(home_team)
 	team_bio = nil
 	team_and_scores.each do |team_to_find|
@@ -54,6 +66,7 @@ get '/' do
 end
 
 get '/leaderboard' do
+  @wins = wins
 	@team_and_scores = team_and_scores
 	erb :leaderboard
 end
